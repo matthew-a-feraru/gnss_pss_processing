@@ -3,6 +3,9 @@
 cd /home/matthewf/skyworks/prep/esp-idf
 . ./export.sh
 ```
+# Original esp32c3 examples 
+- At /home/matthewf/skyworks/prep/esp-idf/examples
+- This project has been built based on hello world example 
 
 # Flashing and Running
 ```
