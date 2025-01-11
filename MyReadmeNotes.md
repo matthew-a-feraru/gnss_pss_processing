@@ -59,12 +59,11 @@ sudo picocom -b 9600 /dev/ttyUSB0
 # Source code
 ## Current description
 ### `app_main()` flow
-1. Configure UART of board to correct baud rate (9600)
-2. install UART driver and set pins per global defines
-3. ***TODO*** Do I need to call `send_ubx_command()`?
-4. Call `configure_pps()` to install isr handler for pps pulse and GPIO event queue
-- (can't print in isr handler, need task (`gpio_task_example()`)) to handle event from queue 
-5. Create `gnss_task_read_nmeas()` to read NMEA setences to ensure GNSS is connected
+* Configure UART1 of board to correct baud rate (9600)
+* install UART1 driver and set pins per global defines
+* Call `configure_pps()` to install isr handler for pps pulse and GPIO event queue
+** (can't print in isr handler, need task (`gpio_task_example()`)) to handle event from queue 
+* Create `gnss_task_read_nmeas()` to read NMEA setences to ensure GNSS is connected
 ### `gnss_task_read_nmeas()`
 - Just read and print NMEA strings when they come over UART interface
 ### `gpio_task_example()`
@@ -72,10 +71,11 @@ sudo picocom -b 9600 /dev/ttyUSB0
 - Currently just prints that received something
 - **TODO** Measure and store number of CPU cycles since last pps here!
 - **TODO** If > 2 second passed (maybe second hardware timer), output pulses based on timer to count up to the last stored number of CPU cycles in 1 second. Do this by creating a new output task and event queue. 
+- **TODO** Determine the Timers available on the microcontroller, and what can be done with them, or what they can do (e.g. it can toggle a GPIO line) Select one.
 ### `pps_isr_handler()`
 - Called when pps signal comes from GNSS rising edge
 - Add event to queue
 #### **TODO** 
-1. Stop hardware timer since last pps received
-2. Start new hardware timer
-3. Send to gpio_task_example's event queue the number of cycles in last second
+* Stop hardware timer since last pps received
+* Start new hardware timer
+* Send to gpio_task_example's event queue the number of cycles in last second
