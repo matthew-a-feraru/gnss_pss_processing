@@ -1,0 +1,24 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/matthewf/esp/gnss_pss_processing/build/bootloader/esp-idf/esptool_py && /home/matthewf/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/matthewf/skyworks/prep/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /home/matthewf/esp/gnss_pss_processing/build/bootloader/bootloader.bin
+Bootloader binary size 0x5220 bytes. 0x2de0 bytes (36%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+/home/matthewf/esp/gnss_pss_processing/main/main.c: In function 'app_main':
+/home/matthewf/esp/gnss_pss_processing/main/main.c:167:21: warning: passing argument 1 of 'append_checksum' discards 'const' qualifier from pointer target type [-Wdiscarded-qualifiers]
+  167 |     append_checksum(pps_enable_command, command_len);
+      |                     ^~~~~~~~~~~~~~~~~~
+/home/matthewf/esp/gnss_pss_processing/main/main.c:130:31: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'const uint8_t *' {aka 'const unsigned char *'}
+  130 | void append_checksum(uint8_t *command, size_t len) {
+      |                      ~~~~~~~~~^~~~~~~
+[5/9] Linking C static library esp-idf/main/libmain.a
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable gnss_disciplined_oscillator.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.9.dev3
+Creating esp32c3 image...
+Merged 1 ELF section
+Successfully created esp32c3 image.
+Generated /home/matthewf/esp/gnss_pss_processing/build/gnss_disciplined_oscillator.bin
+[9/9] cd /home/matthewf/esp/gnss_pss_processing/build/esp-idf/esptool_py && /home/matthewf/.espressif/python_env/idf5.5_py3.12_env/bin/python /home/matthewf/skyworks/prep/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/matthewf/esp/gnss_pss_processing/build/partition_table/partition-table.bin /home/matthewf/esp/gnss_pss_processing/build/gnss_disciplined_oscillator.bin
+gnss_disciplined_oscillator.bin binary size 0x2b7b0 bytes. Smallest app partition is 0x100000 bytes. 0xd4850 bytes (83%) free.

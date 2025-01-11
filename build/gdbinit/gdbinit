@@ -1,0 +1,2 @@
+source /home/matthewf/esp/gnss_pss_processing/build/gdbinit/symbols
+source /home/matthewf/esp/gnss_pss_processing/build/gdbinit/connect

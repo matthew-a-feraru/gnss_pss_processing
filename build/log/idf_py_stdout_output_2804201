@@ -1,0 +1,51 @@
+������I (26) boot: ESP-IDF v5.5-dev-1050-gb5ac4fbdf9 2nd stage bootloader
+[0;32mI (26) boot: compile time Jan  9 2025 20:48:31[0m
+[0;32mI (26) boot: chip revision: v0.3[0m
+[0;32mI (28) boot: efuse block revision: v1.1[0m
+[0;32mI (31) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (35) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07e9ch ( 32412) map[0m
+[0;32mI (91) esp_image: segment 1: paddr=00017ec4 vaddr=3fc8ca00 size=011bch (  4540) load[0m
+[0;32mI (94) esp_image: segment 2: paddr=00019088 vaddr=40380000 size=06f90h ( 28560) load[0m
+[0;32mI (106) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=15498h ( 87192) map[0m
+[0;32mI (122) esp_image: segment 4: paddr=000354c0 vaddr=40386f90 size=05a4ch ( 23116) load[0m
+[0;32mI (127) esp_image: segment 5: paddr=0003af14 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (131) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (131) boot: Disabling RNG early entropy source...[0m
+[0;32mI (147) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     gnss_disciplined_oscillator[0m
+[0;32mI (162) app_init: App version:      1[0m
+[0;32mI (165) app_init: Compile time:     Jan  9 2025 20:48:28[0m
+[0;32mI (170) app_init: ELF file SHA256:  528d6bfdf...[0m
+[0;32mI (174) app_init: ESP-IDF:          v5.5-dev-1050-gb5ac4fbdf9[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8EA20 len 000315E0 (197 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000001C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: mxic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;32mI (227) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (233) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (240) main_task: Started on CPU0[0m
+[0;32mI (240) main_task: Calling app_main()[0m
+configure_pps: 81
+[0;32mI (240) gpio: GPIO[4]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:1 [0m
+gpio_task_example: 62
+configure_pps: 103
+app_main: 125
+[0;32mI (260) main_task: Returned from app_main()[0m

@@ -1,0 +1,75 @@
+[0;33m--- esp-idf-monitor 1.5.0 on /dev/ttyACM0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- Stack dump detected[0m
+[0;33m--- 0x42005838: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+0x42005830: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/matthewf/skyworks/prep/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Stack dump detected[0m
+[0;33m--- 0x42005838: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+0x42005830: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/matthewf/skyworks/prep/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Stack dump detected[0m
+[0;33m--- 0x42005838: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+0x42005830: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/matthewf/skyworks/prep/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Stack dump detected[0m
+[0;33m--- 0x42005838: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+0x42005830: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/matthewf/skyworks/prep/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Stack dump detected[0m
+[0;33m--- 0x42005838: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+0x42005830: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/matthewf/skyworks/prep/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0;33m--- Stack dump detected[0m
+[0;33m--- 0x42005838: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+0x42005830: append_checksum at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+[0m
+[0;33m--- 0x4005890e: memset in ROM
+[0m
+[0;33m--- 0x40380001: _vector_table at /home/matthewf/skyworks/prep/esp-idf/components/riscv/vectors_intc.S:54
+[0m
+[0;33m
+--- Backtrace:
+
+[0m
+[0m

@@ -1,0 +1,425 @@
+[0;32mI (26) boot: ESP-IDF v5.5-dev-1050-gb5ac4fbdf9 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Jan  9 2025 20:48:31[0m
+[0;32mI (26) boot: chip revision: v0.3[0m
+[0;32mI (28) boot: efuse block revision: v1.1[0m
+[0;32mI (31) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (35) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (62) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07f94h ( 32660) map[0m
+[0;32mI (91) esp_image: segment 1: paddr=00017fbc vaddr=3fc8ce00 size=011bch (  4540) load[0m
+[0;32mI (94) esp_image: segment 2: paddr=00019180 vaddr=40380000 size=06e98h ( 28312) load[0m
+[0;32mI (106) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=159d0h ( 88528) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=000359f8 vaddr=40386e98 size=05d88h ( 23944) load[0m
+[0;32mI (127) esp_image: segment 5: paddr=0003b788 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (131) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (132) boot: Disabling RNG early entropy source...[0m
+[0;32mI (148) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     gnss_disciplined_oscillator[0m
+[0;32mI (162) app_init: App version:      1[0m
+[0;32mI (165) app_init: Compile time:     Jan  9 2025 23:34:48[0m
+[0;32mI (170) app_init: ELF file SHA256:  930bb2b3d...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5-dev-1050-gb5ac4fbdf9[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000001C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: mxic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;32mI (227) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (233) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (240) main_task: Started on CPU0[0m
+[0;32mI (240) main_task: Calling app_main()[0m
+command_len: 14
+Guru Meditation Error: Core  0 panic'ed (Store access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x42005838  RA      : 0x42005830  SP      : 0x3fc90330  GP      : 0x3fc8d600  
+TP      : 0x3fc903d0  T0      : 0x4005890e  T1      : 0x10000000  T2      : 0x00000000  
+S0/FP   : 0x3c026704  S1      : 0x0000000e  A0      : 0x3c026704  A1      : 0x0000000e  
+A2      : 0x3fc9033f  A3      : 0x3fc9033e  A4      : 0x00000008  A5      : 0x3c026712  
+A6      : 0x00000041  A7      : 0x0000000a  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x3c026712  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/matthewf/esp/gnss_pss_processing/build/bootloader/bootloader.elf"
+0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+133	    command[len] = checksum_a;
+#0  0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+#1  0x420058d2 in app_main () at /home/matthewf/esp/gnss_pss_processing/main/main.c:165
+#2  0x42014f8a in main_task (args=<error reading variable: value has been optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/app_startup.c:208
+#3  0x40385b3a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: 930bb2b3d
+
+Rebooting...
+[0;32mI (26) boot: ESP-IDF v5.5-dev-1050-gb5ac4fbdf9 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Jan  9 2025 20:48:31[0m
+[0;32mI (26) boot: chip revision: v0.3[0m
+[0;32mI (28) boot: efuse block revision: v1.1[0m
+[0;32mI (31) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (35) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07f94h ( 32660) map[0m
+[0;32mI (92) esp_image: segment 1: paddr=00017fbc vaddr=3fc8ce00 size=011bch (  4540) load[0m
+[0;32mI (95) esp_image: segment 2: paddr=00019180 vaddr=40380000 size=06e98h ( 28312) load[0m
+[0;32mI (106) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=159d0h ( 88528) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=000359f8 vaddr=40386e98 size=05d88h ( 23944) load[0m
+[0;32mI (127) esp_image: segment 5: paddr=0003b788 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (132) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (132) boot: Disabling RNG early entropy source...[0m
+[0;32mI (148) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     gnss_disciplined_oscillator[0m
+[0;32mI (162) app_init: App version:      1[0m
+[0;32mI (165) app_init: Compile time:     Jan  9 2025 23:34:48[0m
+[0;32mI (170) app_init: ELF file SHA256:  930bb2b3d...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5-dev-1050-gb5ac4fbdf9[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000001C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: mxic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;32mI (227) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (233) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (240) main_task: Started on CPU0[0m
+[0;32mI (240) main_task: Calling app_main()[0m
+command_len: 14
+Guru Meditation Error: Core  0 panic'ed (Store access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x42005838  RA      : 0x42005830  SP      : 0x3fc90330  GP      : 0x3fc8d600  
+TP      : 0x3fc903d0  T0      : 0x4005890e  T1      : 0x10000000  T2      : 0x00000000  
+S0/FP   : 0x3c026704  S1      : 0x0000000e  A0      : 0x3c026704  A1      : 0x0000000e  
+A2      : 0x3fc9033f  A3      : 0x3fc9033e  A4      : 0x00000008  A5      : 0x3c026712  
+A6      : 0x00000041  A7      : 0x0000000a  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x3c026712  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/matthewf/esp/gnss_pss_processing/build/bootloader/bootloader.elf"
+0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+133	    command[len] = checksum_a;
+#0  0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+#1  0x420058d2 in app_main () at /home/matthewf/esp/gnss_pss_processing/main/main.c:165
+#2  0x42014f8a in main_task (args=<error reading variable: value has been optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/app_startup.c:208
+#3  0x40385b3a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: 930bb2b3d
+
+Rebooting...
+[0;32mI (26) boot: ESP-IDF v5.5-dev-1050-gb5ac4fbdf9 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Jan  9 2025 20:48:31[0m
+[0;32mI (26) boot: chip revision: v0.3[0m
+[0;32mI (28) boot: efuse block revision: v1.1[0m
+[0;32mI (31) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (35) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07f94h ( 32660) map[0m
+[0;32mI (92) esp_image: segment 1: paddr=00017fbc vaddr=3fc8ce00 size=011bch (  4540) load[0m
+[0;32mI (95) esp_image: segment 2: paddr=00019180 vaddr=40380000 size=06e98h ( 28312) load[0m
+[0;32mI (106) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=159d0h ( 88528) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=000359f8 vaddr=40386e98 size=05d88h ( 23944) load[0m
+[0;32mI (127) esp_image: segment 5: paddr=0003b788 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (132) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (132) boot: Disabling RNG early entropy source...[0m
+[0;32mI (148) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     gnss_disciplined_oscillator[0m
+[0;32mI (162) app_init: App version:      1[0m
+[0;32mI (165) app_init: Compile time:     Jan  9 2025 23:34:48[0m
+[0;32mI (170) app_init: ELF file SHA256:  930bb2b3d...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5-dev-1050-gb5ac4fbdf9[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000001C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: mxic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;32mI (227) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (233) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (240) main_task: Started on CPU0[0m
+[0;32mI (240) main_task: Calling app_main()[0m
+command_len: 14
+Guru Meditation Error: Core  0 panic'ed (Store access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x42005838  RA      : 0x42005830  SP      : 0x3fc90330  GP      : 0x3fc8d600  
+TP      : 0x3fc903d0  T0      : 0x4005890e  T1      : 0x10000000  T2      : 0x00000000  
+S0/FP   : 0x3c026704  S1      : 0x0000000e  A0      : 0x3c026704  A1      : 0x0000000e  
+A2      : 0x3fc9033f  A3      : 0x3fc9033e  A4      : 0x00000008  A5      : 0x3c026712  
+A6      : 0x00000041  A7      : 0x0000000a  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x3c026712  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/matthewf/esp/gnss_pss_processing/build/bootloader/bootloader.elf"
+0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+133	    command[len] = checksum_a;
+#0  0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+#1  0x420058d2 in app_main () at /home/matthewf/esp/gnss_pss_processing/main/main.c:165
+#2  0x42014f8a in main_task (args=<error reading variable: value has been optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/app_startup.c:208
+#3  0x40385b3a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: 930bb2b3d
+
+Rebooting...
+[0;32mI (26) boot: ESP-IDF v5.5-dev-1050-gb5ac4fbdf9 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Jan  9 2025 20:48:31[0m
+[0;32mI (26) boot: chip revision: v0.3[0m
+[0;32mI (28) boot: efuse block revision: v1.1[0m
+[0;32mI (31) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (35) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07f94h ( 32660) map[0m
+[0;32mI (92) esp_image: segment 1: paddr=00017fbc vaddr=3fc8ce00 size=011bch (  4540) load[0m
+[0;32mI (95) esp_image: segment 2: paddr=00019180 vaddr=40380000 size=06e98h ( 28312) load[0m
+[0;32mI (106) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=159d0h ( 88528) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=000359f8 vaddr=40386e98 size=05d88h ( 23944) load[0m
+[0;32mI (127) esp_image: segment 5: paddr=0003b788 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (132) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (132) boot: Disabling RNG early entropy source...[0m
+[0;32mI (148) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     gnss_disciplined_oscillator[0m
+[0;32mI (162) app_init: App version:      1[0m
+[0;32mI (165) app_init: Compile time:     Jan  9 2025 23:34:48[0m
+[0;32mI (170) app_init: ELF file SHA256:  930bb2b3d...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5-dev-1050-gb5ac4fbdf9[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000001C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: mxic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;32mI (227) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (233) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (240) main_task: Started on CPU0[0m
+[0;32mI (240) main_task: Calling app_main()[0m
+command_len: 14
+Guru Meditation Error: Core  0 panic'ed (Store access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x42005838  RA      : 0x42005830  SP      : 0x3fc90330  GP      : 0x3fc8d600  
+TP      : 0x3fc903d0  T0      : 0x4005890e  T1      : 0x10000000  T2      : 0x00000000  
+S0/FP   : 0x3c026704  S1      : 0x0000000e  A0      : 0x3c026704  A1      : 0x0000000e  
+A2      : 0x3fc9033f  A3      : 0x3fc9033e  A4      : 0x00000008  A5      : 0x3c026712  
+A6      : 0x00000041  A7      : 0x0000000a  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x3c026712  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/matthewf/esp/gnss_pss_processing/build/bootloader/bootloader.elf"
+0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+133	    command[len] = checksum_a;
+#0  0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+#1  0x420058d2 in app_main () at /home/matthewf/esp/gnss_pss_processing/main/main.c:165
+#2  0x42014f8a in main_task (args=<error reading variable: value has been optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/app_startup.c:208
+#3  0x40385b3a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: 930bb2b3d
+
+Rebooting...
+[0;32mI (26) boot: ESP-IDF v5.5-dev-1050-gb5ac4fbdf9 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Jan  9 2025 20:48:31[0m
+[0;32mI (26) boot: chip revision: v0.3[0m
+[0;32mI (28) boot: efuse block revision: v1.1[0m
+[0;32mI (31) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (35) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07f94h ( 32660) map[0m
+[0;32mI (92) esp_image: segment 1: paddr=00017fbc vaddr=3fc8ce00 size=011bch (  4540) load[0m
+[0;32mI (95) esp_image: segment 2: paddr=00019180 vaddr=40380000 size=06e98h ( 28312) load[0m
+[0;32mI (106) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=159d0h ( 88528) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=000359f8 vaddr=40386e98 size=05d88h ( 23944) load[0m
+[0;32mI (127) esp_image: segment 5: paddr=0003b788 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (132) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (132) boot: Disabling RNG early entropy source...[0m
+[0;32mI (148) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     gnss_disciplined_oscillator[0m
+[0;32mI (162) app_init: App version:      1[0m
+[0;32mI (165) app_init: Compile time:     Jan  9 2025 23:34:48[0m
+[0;32mI (170) app_init: ELF file SHA256:  930bb2b3d...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5-dev-1050-gb5ac4fbdf9[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000001C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: mxic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;32mI (227) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (233) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (240) main_task: Started on CPU0[0m
+[0;32mI (240) main_task: Calling app_main()[0m
+command_len: 14
+Guru Meditation Error: Core  0 panic'ed (Store access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x42005838  RA      : 0x42005830  SP      : 0x3fc90330  GP      : 0x3fc8d600  
+TP      : 0x3fc903d0  T0      : 0x4005890e  T1      : 0x10000000  T2      : 0x00000000  
+S0/FP   : 0x3c026704  S1      : 0x0000000e  A0      : 0x3c026704  A1      : 0x0000000e  
+A2      : 0x3fc9033f  A3      : 0x3fc9033e  A4      : 0x00000008  A5      : 0x3c026712  
+A6      : 0x00000041  A7      : 0x0000000a  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x3c026712  
+MHARTID : 0x00000000  
+
+add symbol table from file "/home/matthewf/esp/gnss_pss_processing/build/bootloader/bootloader.elf"
+0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+133	    command[len] = checksum_a;
+#0  0x42005838 in append_checksum (command=command@entry=0x3c026704 <pps_enable_command> "", len=len@entry=14) at /home/matthewf/esp/gnss_pss_processing/main/main.c:133
+#1  0x420058d2 in app_main () at /home/matthewf/esp/gnss_pss_processing/main/main.c:165
+#2  0x42014f8a in main_task (args=<error reading variable: value has been optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/app_startup.c:208
+#3  0x40385b3a in vPortTaskWrapper (pxCode=<optimized out>, pvParameters=<optimized out>) at /home/matthewf/skyworks/prep/esp-idf/components/freertos/FreeRTOS-Kernel/portable/riscv/port.c:255
+
+
+
+ELF file SHA256: 930bb2b3d
+
+Rebooting...
+[0;32mI (26) boot: ESP-IDF v5.5-dev-1050-gb5ac4fbdf9 2nd stage bootloader[0m
+[0;32mI (26) boot: compile time Jan  9 2025 20:48:31[0m
+[0;32mI (26) boot: chip revision: v0.3[0m
+[0;32mI (28) boot: efuse block revision: v1.1[0m
+[0;32mI (31) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (35) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c020020 size=07f94h ( 32660) map[0m
+[0;32mI (92) esp_image: segment 1: paddr=00017fbc vaddr=3fc8ce00 size=011bch (  4540) load[0m
+[0;32mI (95) esp_image: segment 2: paddr=00019180 vaddr=40380000 size=06e98h ( 28312) load[0m
+[0;32mI (106) esp_image: segment 3: paddr=00020020 vaddr=42000020 size=159d0h ( 88528) map[0m
+[0;32mI (123) esp_image: segment 4: paddr=000359f8 vaddr=40386e98 size=05d88h ( 23944) load[0m
+[0;32mI (127) esp_image: segment 5: paddr=0003b788 vaddr=50000000 size=0001ch (    28) load[0m
+[0;32mI (132) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (132) boot: Disabling RNG early entropy source...[0m
+[0;32mI (148) cpu_start: Unicore app[0m
+[0;32mI (156) cpu_start: Pro cpu start user code[0m
+[0;32mI (156) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (156) app_init: Application information:[0m
+[0;32mI (156) app_init: Project name:     gnss_disciplined_oscillator[0m
+[0;32mI (162) app_init: App version:      1[0m
+[0;32mI (165) app_init: Compile time:     Jan  9 2025 23:34:48[0m
+[0;32mI (170) app_init: ELF file SHA256:  930bb2b3d...[0m
+[0;32mI (175) app_init: ESP-IDF:          v5.5-dev-1050-gb5ac4fbdf9[0m
+[0;32mI (180) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (184) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (188) efuse_init: Chip rev:         v0.3[0m
+[0;32mI (192) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (198) heap_init: At 3FC8EE20 len 000311E0 (196 KiB): RAM[0m
+[0;32mI (203) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (209) heap_init: At 3FCDC710 len 00002950 (10 KiB): Retention RAM[0m
+[0;32mI (215) heap_init: At 5000001C len 00001FCC (7 KiB): RTCRAM[0m
+[0;32mI (221) spi_flash: detected chip: mxic[0m
+[0;32mI (224) spi_flash: flash io: dio[0m
+[0;32mI (227) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (233) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (240) main_task: Started on CPU0[0m
+[0;32mI (240) main_task: Calling app_main()[0m
+command_len: 14
+Guru Meditation Error: Core  0 panic'ed (Store access fault). Exception was unhandled.
+
+Core  0 register dump:
+MEPC    : 0x42005838  RA      : 0x42005830  SP      : 0x3fc90330  GP      : 0x3fc8d600  
+TP      : 0x3fc903d0  T0      : 0x4005890e  T1      : 0x10000000  T2      : 0x00000000  
+S0/FP   : 0x3c026704  S1      : 0x0000000e  A0      : 0x3c026704  A1      : 0x0000000e  
+A2      : 0x3fc9033f  A3      : 0x3fc9033e  A4      : 0x00000008  A5      : 0x3c026712  
+A6      : 0x00000041  A7      : 0x0000000a  S2      : 0x00000000  S3      : 0x00000000  
+S4      : 0x00000000  S5      : 0x00000000  S6      : 0x00000000  S7      : 0x00000000  
+S8      : 0x00000000  S9      : 0x00000000  S10     : 0x00000000  S11     : 0x00000000  
+T3      : 0x00000000  T4      : 0x00000000  T5      : 0x00000000  T6      : 0x00000000  
+MSTATUS : 0x00001881  MTVEC   : 0x40380001  MCAUSE  : 0x00000007  MTVAL   : 0x3c026712  
+MHARTID : 0x00000000  
+
